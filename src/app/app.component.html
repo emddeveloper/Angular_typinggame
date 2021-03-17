@@ -1,0 +1,26 @@
+<div class="columns is-mobile mt-6">
+  <div class="column is-three-fifths is-offset-one-fifth has-text-centered">
+    <div class="card">
+      <div class="card-content">
+        <div class="content">
+          <h1 class="title">Typing Challenge</h1>
+          <p class="mt-4 mb-4">
+            <span
+              *ngFor="let letter of sampleText.split(''); let i = index"
+              [class]="compare(letter, enteredText[i])"
+              >{{ letter }}</span
+            >
+          </p>
+          <input class="mt-3" (input)="getInput($event.target.value)" />
+
+          <h1
+            class="mt-6 has-background-primary-dark has-text-white title"
+            *ngIf="sampleText === enteredText"
+          >
+            Success !
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
